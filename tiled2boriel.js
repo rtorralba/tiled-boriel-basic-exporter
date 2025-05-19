@@ -85,7 +85,7 @@ let Tiled2BorielBasicExporter = {
         basicStr += "        drawTile(map(index), x, y)\n"
         basicStr += "        \n"
         basicStr += "        x = x + 1\n"
-        basicStr += "        If x = screenWidth Then\n"
+        basicStr += "        If x = SCREEN_WIDTH - 1 Then\n"
         basicStr += "            x = 0\n"
         basicStr += "            y = y + 1\n"
         basicStr += "        End If\n"
