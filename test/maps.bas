@@ -18,7 +18,7 @@ Sub mapDraw()
         drawTile(map(index), x, y)
         
         x = x + 1
-        If x = screenWidth Then
+        If x = SCREEN_WIDTH - 1 Then
             x = 0
             y = y + 1
         End If
