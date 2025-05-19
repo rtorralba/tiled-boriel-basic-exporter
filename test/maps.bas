@@ -5,24 +5,7 @@ Const SCREEN_LENGTH as Uinteger = 704
 
 Sub drawTile(tileId as Ubyte, x as Ubyte, y as Ubyte)
     ' Put your code here to draw the tile
-End Sub
-
-Sub mapDraw()
-    Dim index As Uinteger
-    Dim y, x As Ubyte
-    
-    x = 0
-    y = 0
-    
-    For index=0 To SCREEN_LENGTH - 1
-        drawTile(map(index), x, y)
-        
-        x = x + 1
-        If x = SCREEN_WIDTH - 1 Then
-            x = 0
-            y = y + 1
-        End If
-    Next index
+    Print At y, x; tileId
 End Sub
 
 Dim map(3, 21, 31) as Ubyte = { _
@@ -123,3 +106,21 @@ Dim map(3, 21, 31) as Ubyte = { _
     {35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35} _
   } _
 }
+
+Sub mapDraw(screen as Ubyte)
+    Dim index As Uinteger
+    Dim y, x As Ubyte
+    
+    x = 0
+    y = 0
+    
+    For index=0 To SCREEN_LENGTH - 1
+        drawTile(map(screen, y, x), x, y)
+        
+        x = x + 1
+        If x = SCREEN_WIDTH - 1 Then
+            x = 0
+            y = y + 1
+        End If
+    Next index
+End Sub

@@ -72,24 +72,7 @@ let Tiled2BorielBasicExporter = {
 
         basicStr += "Sub drawTile(tileId as Ubyte, x as Ubyte, y as Ubyte)\n"
         basicStr += "    ' Put your code here to draw the tile\n"
-        basicStr += "End Sub\n\n"
-
-        basicStr += "Sub mapDraw()\n"
-        basicStr += "    Dim index As Uinteger\n"
-        basicStr += "    Dim y, x As Ubyte\n"
-        basicStr += "    \n"
-        basicStr += "    x = 0\n"
-        basicStr += "    y = 0\n"
-        basicStr += "    \n"
-        basicStr += "    For index=0 To SCREEN_LENGTH - 1\n"
-        basicStr += "        drawTile(map(index), x, y)\n"
-        basicStr += "        \n"
-        basicStr += "        x = x + 1\n"
-        basicStr += "        If x = SCREEN_WIDTH - 1 Then\n"
-        basicStr += "            x = 0\n"
-        basicStr += "            y = y + 1\n"
-        basicStr += "        End If\n"
-        basicStr += "    Next index\n"
+        basicStr += "    Print At y, x; tileId\n"
         basicStr += "End Sub\n\n"
 
         basicStr += "Dim map(" + (m.map.length - 1) + ", " + (screenHeight - 1) + ", " + (screenWidth - 1) + ") as Ubyte = { _\n";
@@ -116,7 +99,25 @@ let Tiled2BorielBasicExporter = {
         // Remove last comma
         basicStr = basicStr.slice(0, -5);
         basicStr += "} _\n";
-        basicStr += "}\n";
+        basicStr += "}\n\n";
+
+        basicStr += "Sub mapDraw(screen as Ubyte)\n"
+        basicStr += "    Dim index As Uinteger\n"
+        basicStr += "    Dim y, x As Ubyte\n"
+        basicStr += "    \n"
+        basicStr += "    x = 0\n"
+        basicStr += "    y = 0\n"
+        basicStr += "    \n"
+        basicStr += "    For index=0 To SCREEN_LENGTH - 1\n"
+        basicStr += "        drawTile(map(screen, y, x), x, y)\n"
+        basicStr += "        \n"
+        basicStr += "        x = x + 1\n"
+        basicStr += "        If x = SCREEN_WIDTH - 1 Then\n"
+        basicStr += "            x = 0\n"
+        basicStr += "            y = y + 1\n"
+        basicStr += "        End If\n"
+        basicStr += "    Next index\n"
+        basicStr += "End Sub"
         //Save example file for testing
         let file = new TextFile(filename, TextFile.WriteOnly);
         file.write(basicStr);
