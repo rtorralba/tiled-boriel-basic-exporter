@@ -22,7 +22,7 @@ Este exportador convierte los mapas diseñados en Tiled a un formato que puede s
 
 ## Instalación
 
-Descarga el fichero [tiled2boriel.js] en la carpeta de las extensiones de Tiled, puedes ver que carpeta es (puede variar segun SO) en Editar > Preferencias > Complementos > Extensions > Directory
+Descarga el fichero [tiled2boriel.js](https://raw.githubusercontent.com/rtorralba/tiled-boriel-basic-exporter/refs/heads/main/tiled2boriel.js) en la carpeta de las extensiones de Tiled, puedes ver que carpeta es (puede variar segun SO) en Editar > Preferencias > Complementos > Extensions > Directory
 
 ## Uso
 
