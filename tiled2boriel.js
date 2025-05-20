@@ -65,7 +65,7 @@ let Tiled2BorielBasicExporter = {
             }
         }
 
-        let basicStr = "Const SCREENS_COUNT = " + m.map.length + "\n"
+        let basicStr = "Const SCREENS_COUNT as Ubyte = " + m.map.length + "\n"
         basicStr += "Const SCREEN_WIDTH as Ubyte = " + screenWidth + "\n"
         basicStr += "Const SCREEN_HEIGHT as Ubyte = " + screenHeight + "\n"
         basicStr += "Const SCREEN_LENGTH as Uinteger = " + (screenWidth * screenHeight) + "\n\n"
