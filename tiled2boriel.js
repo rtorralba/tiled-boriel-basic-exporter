@@ -70,11 +70,6 @@ let Tiled2BorielBasicExporter = {
         basicStr += "Const SCREEN_HEIGHT as Ubyte = " + screenHeight + "\n"
         basicStr += "Const SCREEN_LENGTH as Uinteger = " + (screenWidth * screenHeight) + "\n\n"
 
-        basicStr += "Sub drawTile(tileId as Ubyte, x as Ubyte, y as Ubyte)\n"
-        basicStr += "    ' Put your code here to draw the tile\n"
-        basicStr += "    Print At y, x; tileId\n"
-        basicStr += "End Sub\n\n"
-
         basicStr += "Dim map(" + (m.map.length - 1) + ", " + (screenHeight - 1) + ", " + (screenWidth - 1) + ") as Ubyte = { _\n";
         for (let i = 0; i < m.map.length; i++) {
             basicStr += "  { _\n";
