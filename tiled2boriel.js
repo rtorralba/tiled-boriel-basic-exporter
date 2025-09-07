@@ -13,6 +13,11 @@ let Tiled2BorielBasicExporter = {
     write: function (map, filename) {
         let screenWidth = map.property("screenWidth");
         let screenHeight = map.property("screenHeight");
+
+        if (!screenWidth || !screenHeight) {
+            tiled.alert("Please set 'screenWidth' and 'screenHeight' custom properties on the map.");
+            return;
+        }
         let m = {
             width: screenWidth,
             height: screenHeight,
