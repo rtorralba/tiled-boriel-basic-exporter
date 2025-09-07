@@ -27,4 +27,6 @@ Descarga el fichero [tiled2boriel.js](https://raw.githubusercontent.com/rtorralb
 ## Uso
 
 1. Diseña tu mapa en Tiled.
-2. Exporta el archivo seleccionando la opción Boriel Basic (.bas).
+2. Añade las propiedades screenWidth y screenHeight a tu mapa para que el plugin sepa cuantos caracteres
+de ancho y alto tiene cada pantalla. Por ejemplo 32x22 ([imagen](doc/images/properties.png)).
+3. Exporta el archivo seleccionando la opción Boriel Basic (.bas).

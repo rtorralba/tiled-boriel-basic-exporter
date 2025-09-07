@@ -5,7 +5,7 @@
   <property name="screenWidth" type="int" value="32"/>
  </properties>
  <tileset firstgid="1" name="tiles" tilewidth="8" tileheight="8" tilecount="192" columns="32">
-  <image source="../../zx-game-maker/assets/map/tiles.png" width="256" height="48"/>
+  <image source="tiles.png" width="256" height="48"/>
   <tile id="2" type="solid"/>
   <tile id="3" type="solid"/>
   <tile id="12" type="solid"/>
@@ -26,7 +26,7 @@
   <tile id="191" type="key"/>
  </tileset>
  <tileset firstgid="193" name="sprites" tilewidth="16" tileheight="16" tilecount="48" columns="16" objectalignment="topleft">
-  <image source="../../zx-game-maker/assets/map/sprites.png" width="256" height="48"/>
+  <image source="sprites.png" width="256" height="48"/>
  </tileset>
  <layer id="1" name="map" width="30" height="20">
   <data encoding="csv">
